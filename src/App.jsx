@@ -38,11 +38,11 @@ export default function PortfolioWebsite() {
       link: "https://job-portal-sigma-brown.vercel.app//"
     },
     {
-      title: "Aurora-foodie",
+      title: "EstatePro",
       description:
         "Animated personal portfolio website with responsive design.",
       tech: ["React", "Tailwind", "Vite"],
-      link: "https://restaurant-two-pearl.vercel.app/"
+      link: "https://estate-pro-wheat.vercel.app/"
     }
   ]
 
