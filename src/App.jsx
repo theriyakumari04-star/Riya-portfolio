@@ -331,7 +331,7 @@ export default function PortfolioWebsite() {
 
     <input
       type="text"
-      name="from_name"
+      name="name"
       placeholder="Your Name"
       className="w-full p-4 rounded-2xl bg-black border border-white/10 focus:border-cyan-400 outline-none"
       required
@@ -339,7 +339,7 @@ export default function PortfolioWebsite() {
 
     <input
       type="email"
-      name="from_email"
+      name="email"
       placeholder="Your Email"
       className="w-full p-4 rounded-2xl bg-black border border-white/10 focus:border-cyan-400 outline-none"
       required
