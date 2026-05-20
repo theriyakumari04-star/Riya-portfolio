@@ -128,7 +128,7 @@ export default function PortfolioWebsite() {
           className="relative z-10 text-center max-w-4xl"
         >
           <p className="text-cyan-400 uppercase tracking-[0.3em] mb-4 text-sm">
-            Frontend Developer
+            FullStack Developer
           </p>
 
           <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">
@@ -205,8 +205,7 @@ export default function PortfolioWebsite() {
             </p>
 
             <p className="text-gray-400 leading-relaxed mb-8 text-lg">
-              I love building SaaS products, responsive websites, legal-tech
-              platforms and modern dashboards with clean UI/UX.
+              I love building SaaS products, responsive websites, and modern dashboards with clean UI/UX.
             </p>
           </motion.div>
         </div>
