@@ -1,6 +1,32 @@
 import { motion } from "framer-motion"
+import emailjs from '@emailjs/browser'
+import { useRef } from 'react'
+import { useState } from "react"
+
 
 export default function PortfolioWebsite() {
+  // ✅ EmailJS hook
+  const formRef = useRef()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    emailjs.sendForm(
+      "service_wbail0f",
+      "template_qbvs44o",
+      formRef.current,
+      "4GlTSezhbqEdFckKa"
+    )
+    .then(() => {
+      alert("Message sent successfully 🚀")
+      formRef.current.reset()
+    })
+    .catch((error) => {
+      console.log(error)
+      alert("Failed to send message ❌")
+    })
+  }
+
   const projects = [
     {
       title: "LearnHub SaaS",
@@ -44,7 +70,9 @@ export default function PortfolioWebsite() {
       tech: ["React", "Tailwind", "Vite"],
       link: "https://estate-pro-wheat.vercel.app/"
     }
+    
   ]
+  
 
   const skills = [
     "React",
@@ -294,31 +322,46 @@ export default function PortfolioWebsite() {
             Let's connect and create modern digital experiences.
           </p>
 
-          <form className="space-y-6 text-left">
-            <div className="grid md:grid-cols-2 gap-6">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full p-4 rounded-2xl bg-black border border-white/10 focus:border-cyan-400 outline-none"
-              />
+          <form
+  ref={formRef}
+  onSubmit={handleSubmit}
+  className="space-y-6 text-left"
+>
+  <div className="grid md:grid-cols-2 gap-6">
 
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full p-4 rounded-2xl bg-black border border-white/10 focus:border-cyan-400 outline-none"
-              />
-            </div>
+    <input
+      type="text"
+      name="from_name"
+      placeholder="Your Name"
+      className="w-full p-4 rounded-2xl bg-black border border-white/10 focus:border-cyan-400 outline-none"
+      required
+    />
 
-            <textarea
-              rows="6"
-              placeholder="Your Message"
-              className="w-full p-4 rounded-2xl bg-black border border-white/10 focus:border-cyan-400 outline-none"
-            />
+    <input
+      type="email"
+      name="from_email"
+      placeholder="Your Email"
+      className="w-full p-4 rounded-2xl bg-black border border-white/10 focus:border-cyan-400 outline-none"
+      required
+    />
 
-            <button className="w-full py-4 rounded-2xl bg-cyan-500 hover:bg-cyan-400 transition text-black font-semibold text-lg">
-              Send Message
-            </button>
-          </form>
+  </div>
+
+  <textarea
+    rows="6"
+    name="message"
+    placeholder="Your Message"
+    className="w-full p-4 rounded-2xl bg-black border border-white/10 focus:border-cyan-400 outline-none"
+    required
+  />
+
+  <button
+    type="submit"
+    className="w-full py-4 rounded-2xl bg-cyan-500 hover:bg-cyan-400 transition text-black font-semibold text-lg"
+  >
+    Send Message
+  </button>
+</form>
         </div>
       </section>
 
